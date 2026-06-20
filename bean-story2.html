@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Route - Bean Story Page 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bean-story.css">
+</head>
+<body>
+    <!-- Header -->
+       <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">Coffee Route</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav class="nav" id="nav">
+                <a href="home.html">Home</a>
+                <a href="bean-story1.html">Bean Story</a>
+                <a href="#" class="active">Coffee Story</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Feature ▼</a>
+                    <div class="dropdown-content">
+                        <a href="what-should-i-drink.html">What should I drink ?</a>
+                        <a href="diary.html">Dairy</a>
+                    </div>
+                </div>
+                <a href="About-us.html">About us</a>
+                <a href="Login Page.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Coffee Bean Story</h1>
+                <p>ค้นพบเรื่องราวเฉพาะของแต่ละเมล็ดกาแฟ</p>
+                <a href="home.html" class="back-home-btn">Back to Home</a>
+            </div>
+        </section>
+
+        <!-- Bean List Section -->
+        <section class="bean-list-section">
+            <div class="container">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="ค้นหา ชื่อเมล็ด / ประเทศ / รสชาติ"
+                        aria-label="ค้นหาเมล็ดกาแฟ"
+                    >
+                </div>
+
+                <!-- Page Info -->
+                <div class="page-info">
+                    <span>Page 2 of 2</span>
+                </div>
+
+                <!-- Bean Cards Container -->
+                <div class="bean-cards-container" id="beanCardsContainer">
+                    <!-- Bean Card 6 -->
+                    <article class="bean-card">
+                        <div class="bean-img">
+                            <!-- TODO: Replace this placeholder with real image -->
+                            <!-- <img src="assets/images/bean6.jpg" alt="Costa Rican Tarrazú Coffee Bean"> -->
+                            <div class="img-placeholder">Image 6</div>
+                        </div>
+                        <div class="bean-info">
+                            <h3 class="bean-name">คอสตาริกา ตาราซู (Costa Rican Tarrazú)</h3>
+                            <p class="origin">Origin: คอสตาริกา</p>
+                            <p class="roast">Roast Level: Medium</p>
+                            <p class="flavor">Flavor: ส้มโอ, น้ำผึ้ง, ดอกมะลิ</p>
+                            <p class="desc">เมล็ดกาแฟจากที่ราบสูงตาราซู มีรสชาติสดใสและกลิ่นหอมของดอกไม้</p>
+                        </div>
+                    </article>
+
+                    <!-- Bean Card 7 -->
+                    <article class="bean-card">
+                        <div class="bean-img">
+                            <!-- TODO: Replace this placeholder with real image -->
+                            <!-- <img src="assets/images/bean7.jpg" alt="Yemen Mocha Coffee Bean"> -->
+                            <div class="img-placeholder">Image 7</div>
+                        </div>
+                        <div class="bean-info">
+                            <h3 class="bean-name">เยเมน โมคา (Yemen Mocha)</h3>
+                            <p class="origin">Origin: เยเมน</p>
+                            <p class="roast">Roast Level: Dark</p>
+                            <p class="flavor">Flavor: ไวน์, ช็อกโกแลต, ผลไม้แห้ง</p>
+                            <p class="desc">กาแฟโบราณจากเยเมน รสชาติเข้มข้นแปลกใหม่ด้วยกลิ่นหอมคล้ายไวน์</p>
+                        </div>
+                    </article>
+
+                    <!-- Bean Card 8 -->
+                    <article class="bean-card">
+                        <div class="bean-img">
+                            <!-- TODO: Replace this placeholder with real image -->
+                            <!-- <img src="assets/images/bean8.jpg" alt="Brazilian Santos Coffee Bean"> -->
+                            <div class="img-placeholder">Image 8</div>
+                        </div>
+                        <div class="bean-info">
+                            <h3 class="bean-name">บราซิล ซานโตส (Brazilian Santos)</h3>
+                            <p class="origin">Origin: บราซิล</p>
+                            <p class="roast">Roast Level: Medium-Dark</p>
+                            <p class="flavor">Flavor: นัท, คาราเมล, ช็อกโกแลตนม</p>
+                            <p class="desc">เมล็ดกาแฟคลาสสิคจากบราซิล รสชาติหวานมันและเป็นฐานที่ดีสำหรับผสมผสาน</p>
+                        </div>
+                    </article>
+
+                    <!-- Bean Card 9 -->
+                    <article class="bean-card">
+                        <div class="bean-img">
+                            <!-- TODO: Replace this placeholder with real image -->
+                            <!-- <img src="assets/images/bean9.jpg" alt="Panama Geisha Coffee Bean"> -->
+                            <div class="img-placeholder">Image 9</div>
+                        </div>
+                        <div class="bean-info">
+                            <h3 class="bean-name">ปานามา เกอิชา (Panama Geisha)</h3>
+                            <p class="origin">Origin: ปานามา</p>
+                            <p class="roast">Roast Level: Light</p>
+                            <p class="flavor">Flavor: มะม่วง, ชาจัสมิน, เบอร์กาม็อต</p>
+                            <p class="desc">เมล็ดกาแฟหายากที่สุดในโลก รสชาติเฉพาะตัวคล้ายชาและผลไม้เมืองร้อน</p>
+                        </div>
+                    </article>
+
+                    <!-- Bean Card 10 -->
+                    <article class="bean-card">
+                        <div class="bean-img">
+                            <!-- TODO: Replace this placeholder with real image -->
+                            <!-- <img src="assets/images/bean10.jpg" alt="Indonesian Sumatra Coffee Bean"> -->
+                            <div class="img-placeholder">Image 10</div>
+                        </div>
+                        <div class="bean-info">
+                            <h3 class="bean-name">อินโดนีเซีย สุมาตรา (Indonesian Sumatra)</h3>
+                            <p class="origin">Origin: อินโดนีเซีย</p>
+                            <p class="roast">Roast Level: Dark</p>
+                            <p class="flavor">Flavor: ดิน, สมุนไพร, ไม้สน</p>
+                            <p class="desc">กาแฟแห่งป่าดงดิบ มีรสชาติ earthy เข้มข้นและกลิ่นหอมเป็นเอกลักษณ์</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- No Results Message -->
+                <div class="no-results" id="noResults" style="display: none;">
+                    <p>ไม่พบเมล็ดกาแฟที่ค้นหา</p>
+                </div>
+
+                <!-- Navigation -->
+                <div class="navigation">
+                    <a href="bean-story1.html" class="prev-btn">← Previous</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Coffee Route</h3>
+                    <p>เส้นทางสู่รสชาติแห่งกาแฟที่สมบูรณ์แบบ</p>
+                    <p>เราคัดสรรเมล็ดกาแฟคุณภาพเยี่ยมจากทั่วโลกมาให้คุณได้สัมผัส</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>ติดต่อเรา</h3>
+                    <p>📍 123 Coffee Street, Bangkok 10110</p>
+                    <p>📞 02-123-4567</p>
+                    <p>✉️ info@coffeeroute.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="Line">💬</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Coffee Route. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+        <script>
+        // เปิด/ปิดเมนูบนมือถือ (ใช้ id="nav")
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            if (!nav) return;
+            nav.classList.toggle('active'); // ต้องมี CSS สำหรับ .nav.active เพื่อแสดงเมนูบนมือถือ
+        }
+        </script>
+    <script src="js/bean-story.js"></script>
+</body>
+</html>

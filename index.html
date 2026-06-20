@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Route - Home</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">Coffee Route</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav class="nav" id="nav">
+                <a href="#" class="active">Home</a>
+                <a href="bean-story1.html">Bean Story</a>
+                <a href="coffee-story1.html">Coffee Story</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Feature ▼</a>
+                    <div class="dropdown-content">
+                        <a href="what-should-i-drink.html">What should I drink ?</a>
+                        <a href="diary.html">Dairy</a>
+                    </div>
+                </div>
+                <a href="About-us.html">About us</a>
+                <a href="Login Page.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Coffee Route</h1>
+                <p>Discover your perfect coffee journey</p>
+                <a href="About-us.html" class="cta-button">About us</a>
+            </div>
+        </section>
+
+        <!-- Bean Selection Category -->
+        <section class="category-section">
+            <div class="container">
+                <h2 class="section-title">Bean Selection</h2>
+                <div class="image-grid">
+                    <div class="image-placeholder">
+                        <span>Arabica Premium<br>Image 1</span>
+                    </div>
+                    <div class="image-placeholder">
+                        <span>Robusta Bold<br>Image 2</span>
+                    </div>
+                    <div class="image-placeholder">
+                        <span>Ethiopian Origin<br>Image 3</span>
+                    </div>
+                    <div class="image-placeholder">
+                        <span>Colombian Classic<br>Image 4</span>
+                    </div>
+                    <div class="image-placeholder">
+                        <span>Brazilian Smooth<br>Image 5</span>
+                    </div>
+                </div>
+                <a href="bean-story1.html" class="more-button">See More Bean Story</a>
+            </div>
+        </section>
+
+        <!-- Coffee Menu Category -->
+        <section class="category-section">
+            <div class="container">
+                <h2 class="section-title">Coffee Menu</h2>
+                <div class="image-grid">
+                    <div class="image-placeholder">
+                        <span>Espresso Shot<br>Image 1</span>
+                    </div>
+                    <div class="image-placeholder">
+                        <span>Cappuccino Art<br>Image 2</span>
+                    </div>
+                    <div class="image-placeholder">
+                        <span>Latte Smooth<br>Image 3</span>
+                    </div>
+                    <div class="image-placeholder">
+                        <span>Americano Bold<br>Image 4</span>
+                    </div>
+                    <div class="image-placeholder">
+                        <span>Mocha Sweet<br>Image 5</span>
+                    </div>
+                </div>
+                <a href="coffee-story1.html" class="more-button">See More Coffee Story</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Coffee Route</h3>
+                    <p>เส้นทางสู่รสชาติแห่งกาแฟที่สมบูรณ์แบบ</p>
+                    <p>เราคัดสรรเมล็ดกาแฟคุณภาพเยี่ยมจากทั่วโลกมาให้คุณได้สัมผัส</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>ติดต่อเรา</h3>
+                    <p>📍 666 Coffee Street, Paradise 10110</p>
+                    <p>📞 6610510216 , 6610510270 </p>
+                    <p>✉️ info@coffeeroute.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="Line">💬</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Coffee Route. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(74, 44, 42, 0.95)';
+            } else {
+                header.style.background = '#4A2C2A';
+            }
+        });
+
+        // Add loading animation to image placeholders
+        document.querySelectorAll('.image-placeholder').forEach((placeholder, index) => {
+            placeholder.style.animationDelay = `${index * 0.1}s`;
+            placeholder.style.animation = 'fadeInUp 0.6s ease-out forwards';
+        });
+    </script>
+</body>
+</html>

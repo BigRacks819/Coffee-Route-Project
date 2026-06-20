@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Route - Register</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="logo">
+            <h1>Coffee Route</h1>
+            <p>เส้นทางสู่รสชาติแห่งกาแฟ</p>
+        </div>
+
+        <h2 class="form-title">สมัครสมาชิก</h2>
+
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required placeholder="กรุณากรอกชื่อ-นามสกุล" >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="กรุณากรอกอีเมล">
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required placeholder="กรุณากรอกชื่อผู้ใช้">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="รหัสผ่าน">
+                    <div id="passwordStrength" class="password-strength"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="ยืนยันรหัสผ่าน">
+                    <div id="passwordMatch" class="password-strength"></div>
+                </div>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">
+                    ฉันยอมรับ <a href="#" onclick="alert('Terms & Conditions page')">ข้อกำหนดและเงื่อนไข</a> การใช้งาน
+                </label>
+            </div>
+
+            <div class="button-group">
+                <a href="Login Page.html" class="btn btn-register" id="registerBtn">สมัครสมาชิก</a>
+                <a href="Login Page.html" class="btn btn-back">กลับไปหน้า Login</a>
+            </div>
+        </form>
+
+        <div class="coffee-decoration">
+            ☕
+        </div>
+    </div>
+
+    <script>
+        // Password strength checker
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            const strengthDiv = document.getElementById('passwordStrength');
+            
+            if (password.length === 0) {
+                strengthDiv.textContent = '';
+                return;
+            }
+            
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+            
+            switch(strength) {
+                case 0:
+                case 1:
+                    strengthDiv.textContent = 'รหัสผ่านไม่ปลอดภัย';
+                    strengthDiv.className = 'password-strength strength-weak';
+                    break;
+                case 2:
+                case 3:
+                    strengthDiv.textContent = 'รหัสผ่านปานกลาง';
+                    strengthDiv.className = 'password-strength strength-medium';
+                    break;
+                case 4:
+                    strengthDiv.textContent = 'รหัสผ่านแข็งแรง';
+                    strengthDiv.className = 'password-strength strength-strong';
+                    break;
+            }
+            
+            checkPasswordMatch();
+        });
+
+        // Password match checker
+        function checkPasswordMatch() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const matchDiv = document.getElementById('passwordMatch');
+            
+            if (confirmPassword.length === 0) {
+                matchDiv.textContent = '';
+                return;
+            }
+            
+            if (password === confirmPassword) {
+                matchDiv.textContent = 'รหัสผ่านตรงกัน ✓';
+                matchDiv.className = 'password-strength strength-strong';
+            } else {
+                matchDiv.textContent = 'รหัสผ่านไม่ตรงกัน';
+                matchDiv.className = 'password-strength strength-weak';
+            }
+        }
+
+        document.getElementById('confirmPassword').addEventListener('input', checkPasswordMatch);
+
+        // Form validation
+        document.getElementById('registerBtn').addEventListener('click', function(e) {
+            const form = document.getElementById('registerForm');
+            const inputs = form.querySelectorAll('input[required]');
+            let isValid = true;
+            
+            // Check all required fields
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.add('invalid');
+                    isValid = false;
+                } else {
+                    input.classList.remove('invalid');
+                    input.classList.add('valid');
+                }
+            });
+            
+            // Check email format
+            const email = document.getElementById('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email.value && !emailRegex.test(email.value)) {
+                email.classList.add('invalid');
+                isValid = false;
+            }
+            
+            // Check password match
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPassword').classList.add('invalid');
+                isValid = false;
+            }
+            
+            // Check terms acceptance
+            const terms = document.getElementById('terms');
+            if (!terms.checked) {
+                alert('กรุณายอมรับข้อกำหนดและเงื่อนไขการใช้งาน');
+                isValid = false;
+            }
+            
+            if (!isValid) {
+                e.preventDefault();
+                alert('กรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง');
+                return false;
+            }
+            
+            // If validation passes
+            alert('สมัครสมาชิกสำเร็จ! กำลังนำคุณไปยังหน้า Login...');
+            return true;
+        });
+
+        // Add hover effects for better UX
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0px)';
+            });
+        });
+    </script>
+</body>
+</html>

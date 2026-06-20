@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Route - Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <h1>Coffee Route</h1>
+            <p>เส้นทางสู่รสชาติแห่งกาแฟ</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required placeholder="กรุณากรอกชื่อผู้ใช้">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="กรุณากรอกรหัสผ่าน">
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">จำฉันไว้ในระบบ</label>
+            </div>
+
+            <div class="button-group">
+                
+                <button type="submit" class="btn btn-login">เข้าสู่ระบบ</button>
+                <a href="Register Page.html" class="btn btn-register">สมัครสมาชิก</a>
+            </div>
+        </form>
+
+        <div class="coffee-decoration">
+            ☕
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // ป้องกันการ reload หน้า
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (!username || !password) {
+                alert("กรุณากรอกชื่อผู้ใช้และรหัสผ่าน");
+                return;
+            }
+
+            // ✅ ตรวจสอบ user และ pass
+            if (username === "Admin01" && password === "admin") {
+                window.location.href = "home.html"; // พาไปหน้า home
+            } else {
+                alert("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
+            }
+        });
+
+        // Hover effect
+        document.querySelectorAll(".btn").forEach(button => {
+            button.addEventListener("mouseenter", function() {
+                this.style.transform = "translateY(-2px)";
+            });
+            
+            button.addEventListener("mouseleave", function() {
+                this.style.transform = "translateY(0px)";
+            });
+        });
+    </script>
+</body>
+</html>

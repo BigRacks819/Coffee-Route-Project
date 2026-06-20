@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Route - Bean Story Page 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bean-story.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">Coffee Route</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav class="nav" id="nav">
+                <a href="home.html">Home</a>
+                <a href="#" class="active">Bean Story</a>
+                <a href="coffee-story1.html">Coffee Story</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Feature ▼</a>
+                    <div class="dropdown-content">
+                        <a href="what-should-i-drink.html">What should I drink ?</a>
+                        <a href="diary.html">Dairy</a>
+                    </div>
+                </div>
+                <a href="About-us.html">About us</a>
+                <a href="Login Page.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Coffee Bean Story</h1>
+                <p>ค้นพบเรื่องราวเฉพาะของแต่ละเมล็ดกาแฟ</p>
+                <a href="home.html" class="back-home-btn">Back to Home</a>
+            </div>
+        </section>
+
+        <!-- Bean List Section -->
+        <section class="bean-list-section">
+            <div class="container">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="ค้นหา ชื่อเมล็ด / ประเทศ / รสชาติ"
+                        aria-label="ค้นหาเมล็ดกาแฟ"
+                    >
+                </div>
+
+                <!-- Page Info -->
+                <div class="page-info">
+                    <span>Page 1 of 2</span>
+                </div>
+
+                <!-- Bean Cards Container -->
+                <div class="bean-cards-container" id="beanCardsContainer">
+                    <!-- Bean Card 1 -->
+                    <article class="bean-card">
+                        <div class="bean-img">
+                            <!-- TODO: Replace this placeholder with real image -->
+                            <!-- <img src="assets/images/bean1.jpg" alt="Ethiopian Yirgacheffe Coffee Bean"> -->
+                            <div class="img-placeholder">Image 1</div>
+                        </div>
+                        <div class="bean-info">
+                            <h3 class="bean-name">เยอกาเฟ่ เอธิโอเปีย (Ethiopian Yirgacheffe)</h3>
+                            <p class="origin">Origin: เอธิโอเปีย</p>
+                            <p class="roast">Roast Level: Light</p>
+                            <p class="flavor">Flavor: ดอกไม้, ส้ม, ชาเขียว</p>
+                            <p class="desc">เมล็ดกาแฟระดับพรีเมียมจากเอธิโอเปีย มีรสชาติเปรี้ยวสดชื่นและกลิ่นหอมของดอกไม้</p>
+                        </div>
+                    </article>
+
+                    <!-- Bean Card 2 -->
+                    <article class="bean-card">
+                        <div class="bean-img">
+                            <!-- TODO: Replace this placeholder with real image -->
+                            <img src="https://www.coffeeandtea.com/wp-content/uploads/2016/02/ethiopianyirga_1.png" alt="Ethiopian Yirgacheffe coffee beans" width="165" height="150">
+                        </div>
+                        <div class="bean-info">
+                            <h3 class="bean-name">โคลัมเบีย ซูเปรโม (Colombian Supremo)</h3>
+                            <p class="origin">Origin: โคลัมเบีย</p>
+                            <p class="roast">Roast Level: Medium</p>
+                            <p class="flavor">Flavor: ช็อกโกแลต, คาราเมล, อัลมอนด์</p>
+                            <p class="desc">กาแฟโคลัมเบียคุณภาพสูง รสชาติสมดุลระหว่างความหวานธรรมชาติและความเข้มข้น</p>
+                        </div>
+                    </article>
+
+                    <!-- Bean Card 3 -->
+                    <article class="bean-card">
+                        <div class="bean-img">
+                            <!-- TODO: Replace this placeholder with real image -->
+                            <!-- <img src="assets/images/bean3.jpg" alt="Jamaican Blue Mountain Coffee Bean"> -->
+                            <div class="img-placeholder">Image 3</div>
+                        </div>
+                        <div class="bean-info">
+                            <h3 class="bean-name">บลูเมาน์เทน จาไมก้า (Jamaican Blue Mountain)</h3>
+                            <p class="origin">Origin: จาไมก้า</p>
+                            <p class="roast">Roast Level: Medium</p>
+                            <p class="flavor">Flavor: หวานละมุน, วนิลลา, เฮเซลนัท</p>
+                            <p class="desc">เมล็ดกาแฟหายากระดับโลกจากเทือกเขาบลูเมาน์เทน รสชาตินุ่มนวลและไร้ความขม</p>
+                        </div>
+                    </article>
+
+                    <!-- Bean Card 4 -->
+                    <article class="bean-card">
+                        <div class="bean-img">
+                            <!-- TODO: Replace this placeholder with real image -->
+                            <!-- <img src="assets/images/bean4.jpg" alt="Guatemala Antigua Coffee Bean"> -->
+                            <div class="img-placeholder">Image 4</div>
+                        </div>
+                        <div class="bean-info">
+                            <h3 class="bean-name">กัวเตมาลา แอนติกัว (Guatemala Antigua)</h3>
+                            <p class="origin">Origin: กัวเตมาลา</p>
+                            <p class="roast">Roast Level: Medium-Dark</p>
+                            <p class="flavor">Flavor: เสาวรส, ช็อกโกแลตดาร์ก, เครื่องเทศ</p>
+                            <p class="desc">กาแฟจากภูเขาไฟในกัวเตมาลา มีรสชาติเข้มข้นและซับซ้อนด้วยความหอมของเครื่องเทศ</p>
+                        </div>
+                    </article>
+
+                    <!-- Bean Card 5 -->
+                    <article class="bean-card">
+                        <div class="bean-img">
+                            <!-- TODO: Replace this placeholder with real image -->
+                            <!-- <img src="assets/images/bean5.jpg" alt="Hawaiian Kona Coffee Bean"> -->
+                            <div class="img-placeholder">Image 5</div>
+                        </div>
+                        <div class="bean-info">
+                            <h3 class="bean-name">โคนา ฮาวาย (Hawaiian Kona)</h3>
+                            <p class="origin">Origin: ฮาวาย, สหรัฐอเมริกา</p>
+                            <p class="roast">Roast Level: Medium</p>
+                            <p class="flavor">Flavor: เนยสด, แมคาเดเมีย, ผลไม้เมืองร้อน</p>
+                            <p class="desc">เมล็ดกาแฟพรีเมียมจากเกาะฮาวาย มีรสชาติหวานมันและกลิ่นหอมเฉพาะตัว</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- No Results Message -->
+                <div class="no-results" id="noResults" style="display: none;">
+                    <p>ไม่พบเมล็ดกาแฟที่ค้นหา</p>
+                </div>
+
+                <!-- Navigation -->
+                <div class="navigation">
+                    <a href="bean-story2.html" class="next-btn">Next →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Coffee Route</h3>
+                    <p>เส้นทางสู่รสชาติแห่งกาแฟที่สมบูรณ์แบบ</p>
+                    <p>เราคัดสรรเมล็ดกาแฟคุณภาพเยี่ยมจากทั่วโลก
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // เปิด/ปิดเมนูบนมือถือ (ใช้ id="nav")
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            if (!nav) return;
+            nav.classList.toggle('active'); // ต้องมี CSS สำหรับ .nav.active เพื่อแสดงเมนูบนมือถือ
+        }
+
+        // ถ้าต้องการให้คลิกนอกเมนูแล้วปิดด้วย (option)
+        document.addEventListener('click', function(e) {
+            const btn = document.querySelector('.mobile-menu-btn');
+            const nav = document.getElementById('nav');
+            if (!nav || !btn) return;
+            if (!nav.classList.contains('active')) return;
+            if (!nav.contains(e.target) && !btn.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

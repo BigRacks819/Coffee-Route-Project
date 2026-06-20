@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Route - What Should I Drink?</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/what-should-i-drink.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="home.html" class="logo">Coffee Route</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle mobile menu">☰</button>
+            <nav class="nav" id="nav">
+                <a href="home.html">Home</a>
+                <a href="bean-story1.html">Bean Story</a>
+                <a href="coffee-story1.html">Coffee Story</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Feature ▼</a>
+                    <div class="dropdown-content">
+                        <a href="what-should-i-drink.html"  class="active" >What should I drink ?</a>
+                        <a href="diary.html">Dairy</a>
+                    </div>
+                </div>
+                <a href="About-us.html">About us</a>
+                <a href="Login Page.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>What Should I Drink?</h1>
+                <p>ตอบคำถามง่าย ๆ 5 ข้อ เพื่อค้นหากาแฟที่เหมาะกับคุณ</p>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="quiz-section">
+            <div class="container">
+                <!-- Progress Indicator -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Question 0 of 5</p>
+                </div>
+
+                <!-- Quiz Form -->
+                <form id="quizForm" class="quiz-form">
+                    <!-- Question 1: Time of Day -->
+                    <div class="question-card" data-question="1">
+                        <h3 class="question-title">1. ช่วงเวลาที่คุณต้องการดื่มกาแฟ?</h3>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="time" value="เช้า" required>
+                                <span class="option-content">
+                                    <span class="option-icon">🌅</span>
+                                    <span class="option-text">เช้า</span>
+                                </span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="time" value="สาย" required>
+                                <span class="option-content">
+                                    <span class="option-icon">☀️</span>
+                                    <span class="option-text">สาย</span>
+                                </span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="time" value="บ่าย" required>
+                                <span class="option-content">
+                                    <span class="option-icon">🌤️</span>
+                                    <span class="option-text">บ่าย</span>
+                                </span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="time" value="เย็น" required>
+                                <span class="option-content">
+                                    <span class="option-icon">🌆</span>
+                                    <span class="option-text">เย็น</span>
+                                </span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="time" value="ค่ำ" required>
+                                <span class="option-content">
+                                    <span class="option-icon">🌙</span>
+                                    <span class="option-text">ค่ำ</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 2: Busyness -->
+                    <div class="question-card" data-question="2">
+                        <h3 class="question-title">2. ความยุ่งของวันนี้?</h3>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="busyness" value="วันแห่งการพักผ่อน" required>
+                                <span class="option-content">
+                                    <span class="option-icon">😌</span>
+                                    <span class="option-text">วันแห่งการพักผ่อน</span>
+                                </span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="busyness" value="นิดหน่อย" required>
+                                <span class="option-content">
+                                    <span class="option-icon">🙂</span>
+                                    <span class="option-text">นิดหน่อย</span>
+                                </span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="busyness" value="งานรัดตัว" required>
+                                <span class="option-content">
+                                    <span class="option-icon">😰</span>
+                                    <span class="option-text">งานรัดตัว</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 3: Taste Preference -->
+                    <div class="question-card" data-question="3">
+                        <h3 class="question-title">3. สายที่คุณชอบ?</h3>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="taste" value="นุ่มนวล" required>
+                                <span class="option-content">
+                                    <span class="option-icon">☁️</span>
+                                    <span class="option-text">นุ่มนวล</span>
+                                </span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="taste" value="เข้มๆ" required>
+                                <span class="option-content">
+                                    <span class="option-icon">💪</span>
+                                    <span class="option-text">เข้มๆ</span>
+                                </span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="taste" value="ได้หมด" required>
+                                <span class="option-content">
+                                    <span class="option-icon">✨</span>
+                                    <span class="option-text">ได้หมด</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 4: Sweetness Level -->
+                    <div class="question-card" data-question="4">
+                        <h3 class="question-title">4. ระดับความหวานที่ต้องการ?</h3>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="sweetness" value="ไม่หวาน" required>
+                                <span class="option-content">
+                                    <span class="option-icon">🖤</span>
+                                    <span class="option-text">ไม่หวาน/ขม</span>
+                                </span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="sweetness" value="ปานกลาง" required>
+                                <span class="option-content">
+                                    <span class="option-icon">🤎</span>
+                                    <span class="option-text">ปานกลาง</span>
+                                </span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="sweetness" value="ชอบหวาน" required>
+                                <span class="option-content">
+                                    <span class="option-icon">🍯</span>
+                                    <span class="option-text">ชอบหวาน</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 5: Caffeine Level -->
+                    <div class="question-card" data-question="5">
+                        <h3 class="question-title">5. ปริมาณคาเฟอีนที่ต้องการ?</h3>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="caffeine" value="ต่ำ" required>
+                                <span class="option-content">
+                                    <span class="option-icon">🌸</span>
+                                    <span class="option-text">ผ่อนคลาย (ต่ำ)</span>
+                                </span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="caffeine" value="ปานกลาง" required>
+                                <span class="option-content">
+                                    <span class="option-icon">⚖️</span>
+                                    <span class="option-text">สมดุล (ปานกลาง)</span>
+                                </span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="caffeine" value="สูง" required>
+                                <span class="option-content">
+                                    <span class="option-icon">⚡</span>
+                                    <span class="option-text">ต้องการพลัง (สูง)</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button type="button" id="resetBtn" class="btn btn-reset">
+                            🔄 Reset
+                        </button>
+                        <button type="submit" id="submitBtn" class="btn btn-submit" disabled>
+                            ✨ แนะนำให้ฉัน
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Error Message -->
+                <div class="error-message" id="errorMessage" style="display: none;">
+                    กรุณาตอบคำถามให้ครบทุกข้อก่อนกดปุ่ม
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Coffee Route</h3>
+                    <p>เส้นทางสู่รสชาติแห่งกาแฟที่สมบูรณ์แบบ</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>ติดต่อเรา</h3>
+                    <p>📍 123 Coffee Street, Bangkok 10110</p>
+                    <p>📞 02-123-4567</p>
+                    <p>✉️ info@coffeeroute.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Coffee Route. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // เปิด/ปิดเมนูบนมือถือ (ใช้ id="nav")
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            if (!nav) return;
+            nav.classList.toggle('active'); // ต้องมี CSS สำหรับ .nav.active เพื่อแสดงเมนูบนมือถือ
+        }
+    </script>
+
+    <script src="what-should-i-drink.js"></script>
+</body>
+</html>

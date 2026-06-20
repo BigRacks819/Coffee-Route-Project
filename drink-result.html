@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Route - Your Perfect Match</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/drink-result.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="home.html" class="logo">Coffee Route</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav class="nav" id="nav">
+                <a href="#" class="active">Home</a>
+                <a href="bean-story1.html">Bean Story</a>
+                <a href="coffee-story1.html">Coffee Story</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Feature ▼</a>
+                    <div class="dropdown-content">
+                        <a href="what-should-i-drink.html">What should I drink ?</a>
+                        <a href="diary.html">Dairy</a>
+                    </div>
+                </div>
+                <a href="About-us.html">About us</a>
+                <a href="Login Page.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>☕ Your Perfect Match!</h1>
+                <p>เราพบกาแฟที่เหมาะกับคุณแล้ว</p>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section">
+            <div class="container">
+                <!-- Top Recommendation -->
+                <div class="top-result" id="topResult">
+                    <!-- Will be populated by JavaScript -->
+                    <div class="loading">กำลังคำนวณผลลัพธ์...</div>
+                </div>
+
+                <!-- Alternative Recommendations -->
+                <div class="alternatives-section" id="alternativesSection" style="display: none;">
+                    <h2 class="section-title">ตัวเลือกอื่นที่แนะนำ</h2>
+                    <div class="alternatives-grid" id="alternativesGrid">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <a href="what-should-i-drink.html" class="btn btn-retry" id="retryBtn">
+                        🔄 ลองอีกครั้ง
+                    </a>
+                    <a href="home.html" class="btn btn-home">
+                        🏠 กลับหน้าหลัก
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Coffee Route</h3>
+                    <p>เส้นทางสู่รสชาติแห่งกาแฟที่สมบูรณ์แบบ</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>ติดต่อเรา</h3>
+                    <p>📍 123 Coffee Street, Bangkok 10110</p>
+                    <p>📞 02-123-4567</p>
+                    <p>✉️ info@coffeeroute.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Coffee Route. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // เปิด/ปิดเมนูบนมือถือ (ใช้ id="nav")
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            if (!nav) return;
+            nav.classList.toggle('active'); // ต้องมี CSS สำหรับ .nav.active เพื่อแสดงเมนูบนมือถือ
+        }
+    </script>
+
+    <script src="drink-result.js"></script>
+</body>
+</html>

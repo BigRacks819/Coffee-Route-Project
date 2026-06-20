@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Route - Coffee Diary</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/diary.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="home.html" class="logo">Coffee Route</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle mobile menu">☰</button>
+            <nav class="nav" id="nav" role="navigation">
+                   <a href="home.html" >Home</a>
+                <a href="bean-story1.html">Bean Story</a>
+                <a href="coffee-story1.html">Coffee Diary</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Feature ▼</a>
+                    <div class="dropdown-content">
+                        <a href="what-should-i-drink.html">What should I drink ?</a>
+                        <a href="diary.html" class="active" >Diary</a>
+                    </div>
+                </div>
+                <a href="About-us.html">About us</a>
+                <a href="Login Page.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>📓 Coffee Diary</h1>
+                <p>บันทึกประสบการณ์กาแฟของคุณทุกวัน</p>
+            </div>
+        </section>
+
+        <!-- Diary Section -->
+        <section class="diary-section">
+            <div class="container">
+                <!-- Write Note Card -->
+                <div class="write-card">
+                    <h2 class="card-title">✍️ บันทึกวันนี้</h2>
+                    
+                    <form id="diaryForm" class="diary-form">
+                        <!-- Date Input -->
+                        <div class="form-group">
+                            <label for="diaryDate">📅 วันที่:</label>
+                            <input 
+                                type="date" 
+                                id="diaryDate" 
+                                name="diaryDate" 
+                                required
+                                aria-label="เลือกวันที่"
+                            >
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label for="diaryNote">
+                                ☕ บันทึกของวันนี้: 
+                                <span class="char-count" id="charCount">0/300</span>
+                            </label>
+                            <textarea 
+                                id="diaryNote" 
+                                name="diaryNote" 
+                                rows="6"
+                                maxlength="300"
+                                placeholder="เช่น: วันนี้ลอง Cold Brew เป็นครั้งแรก สดชื่นดีแฮะ ☕"
+                                required
+                                aria-label="เขียนบันทึก"
+                            ></textarea>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-save">
+                                💾 บันทึก
+                            </button>
+                            <button type="button" class="btn btn-clear" id="clearBtn">
+                                🗑️ ล้างฟอร์ม
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Entries List -->
+                <div class="entries-section">
+                    <div class="entries-header">
+                        <h2 class="section-title">📖 บันทึกย้อนหลัง</h2>
+                        <button class="btn btn-delete-all" id="deleteAllBtn">
+                            🗑️ ลบทั้งหมด
+                        </button>
+                    </div>
+
+                    <!-- Search/Filter -->
+                    <div class="search-box">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            placeholder="🔍 ค้นหาบันทึก..."
+                            aria-label="ค้นหาบันทึก"
+                        >
+                    </div>
+
+                    <!-- Entries Container -->
+                    <div class="entries-container" id="entriesContainer">
+                        <!-- Entries will be dynamically added here -->
+                        <div class="no-entries">
+                            <p>😊 ยังไม่มีบันทึก เริ่มเขียนได้เลย!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Coffee Route</h3>
+                    <p>เส้นทางสู่รสชาติแห่งกาแฟที่สมบูรณ์แบบ</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>ติดต่อเรา</h3>
+                    <p>📍 123 Coffee Street, Bangkok 10110</p>
+                    <p>📞 02-123-4567</p>
+                    <p>✉️ info@coffeeroute.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Coffee Route. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Edit Modal (Hidden by default) -->
+    <div class="modal" id="editModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>✏️ แก้ไขบันทึก</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="editDate">
+                <label for="editNote">บันทึก:</label>
+                <textarea 
+                    id="editNote" 
+                    rows="6"
+                    maxlength="300"
+                ></textarea>
+                <span class="char-count" id="editCharCount">0/300</span>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-save" id="saveEditBtn">💾 บันทึก</button>
+                <button class="btn btn-cancel" id="cancelEditBtn">❌ ยกเลิก</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // เปิด/ปิดเมนูบนมือถือ (ใช้ id="nav")
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            if (!nav) return;
+            nav.classList.toggle('active'); // ต้องมี CSS สำหรับ .nav.active เพื่อแสดงเมนูบนมือถือ
+        }
+
+    </script>
+
+    <script src="js/diary.js"></script>
+</body>
+</html>
